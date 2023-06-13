@@ -12,5 +12,10 @@ const overlay = document.querySelector('.overlay');
 
 for(let i=0; i < openBtn.length; i++){
   // console.log(openBtn[i]);
-  console.log(openBtn[i].textContent);
+  // console.log(openBtn[i].textContent);
+  openBtn[i].addEventListener('click', function(){
+    console.log('button is clicked');
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+  })
 }
