@@ -3,29 +3,51 @@
 //by selecting a class with multiple uses it will only effect on the first class 
 // we need the querySelectorAll for this
 
-const openBtn = document.querySelectorAll('.show-modal');
-const closeBtn = document.querySelector('.close-modal');
+const modalOpenBtn = document.querySelectorAll('.show-modal');
+const modalCloseBtn = document.querySelector('.close-modal');
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 
-// console.log(openBtn);
-
-for(let i=0; i < openBtn.length; i++){
-  // console.log(openBtn[i]);
-  // console.log(openBtn[i].textContent);
-  openBtn[i].addEventListener('click', function(){
-    console.log('button is clicked');
-    modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-  })
+const openModal = function(){
+  console.log('button is clicked');
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
 }
 
-closeBtn.addEventListener('click', function(){
+for(let i=0; i < modalOpenBtn.length; i++){
+  // console.log(modalOpenBtn[i]);
+  // console.log(modalOpenBtn[i].textContent);
+  modalOpenBtn[i].addEventListener('click', openModal);
+}
+
+
+
+// for(let i=0; i < modalOpenBtn.length; i++){
+  // console.log(modalOpenBtn[i]);
+  // console.log(modalOpenBtn[i].textContent);
+  // modalOpenBtn[i].addEventListener('click', function(){
+  //   console.log('button is clicked');
+  //   modal.classList.remove('hidden');
+  //   overlay.classList.remove('hidden');
+  // })
+// }
+
+const closeModal = function(){
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
-})
+}
 
-overlay.addEventListener('click', function(){
-  modal.classList.add('hidded');
-  overlay.classList.add('hidden');
-})
+modalCloseBtn.addEventListener('click', closeModal);
+
+// modalCloseBtn.addEventListener('click', function(){
+//   modal.classList.add('hidden');
+//   overlay.classList.add('hidden');
+// })
+
+
+overlay.addEventListener('click', closeModal);  
+
+// overlay.addEventListener('click', function(){
+//   modal.classList.add('hidden');
+//   overlay.classList.add('hidden');
+// })
