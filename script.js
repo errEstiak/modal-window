@@ -51,3 +51,18 @@ overlay.addEventListener('click', closeModal);
 //   modal.classList.add('hidden');
 //   overlay.classList.add('hidden');
 // })
+
+
+//we can add event globally by selecting
+// => document.addEventListener
+
+document.addEventListener('keydown', function(e){
+  // console.log('key pressed');
+  console.log(e);
+  // console.log(e.key);
+  if(e.key === 'Escape' && !modal.classList.contains('hidden')){
+    // if(!modal.classList.contains('hidden')){
+      closeModal();
+    // }
+  }
+})
